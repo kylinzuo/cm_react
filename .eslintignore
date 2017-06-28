@@ -1,0 +1,5 @@
+build/*.js
+config/*.js
+src/assets/iconfont/*
+static/imsdk/*.js
+static/*.js
