@@ -48,66 +48,38 @@ module.exports = {
         use: [{
             loader: "style-loader" // creates style nodes from JS strings
         }, {
-            loader: "css-loader" // translates CSS into CommonJS
+            loader: "css-loader", // translates CSS into CommonJS
+            options: {
+              importLoaders: 1,
+            }
+        }, {
+          loader: 'px2rem-loader',
+          options: {
+            remUnit:75,
+            remPrecision:8
+          }
+        }, {
+          loader: 'postcss-loader'
         }]
       },
       {
         test: /\.less$/,
         use: [{
-            loader: "style-loader" // creates style nodes from JS strings
+          loader: "style-loader" // creates style nodes from JS strings
         }, {
-            loader: "css-loader" // translates CSS into CommonJS
+          loader: "css-loader" // translates CSS into CommonJS
         }, {
-            loader: "less-loader" // compiles Less to CSS
+          loader: 'px2rem-loader',
+          options: {
+            remUnit:75,
+            remPrecision:8
+          }
+        }, {
+          loader: 'postcss-loader'
+        }, {
+          loader: "less-loader" // compiles Less to CSS
         }]
       }
     ]
   }
-  // resolveLoader: {
-  //   fallback: [path.join(__dirname, '../node_modules')]
-  // }
-  // module: {
-  //   preLoaders: [
-  //     {
-  //       test: /\.js$/,
-  //       loader: 'eslint',
-  //       include: projectRoot,
-  //       exclude: /node_modules/
-  //     }
-  //   ],
-  //   rules: [
-  //     {
-  //       test: /\.js$/,
-  //       loader: 'babel',
-  //       include: projectRoot,
-  //       exclude: [
-  //         /node_modules/,
-  //         /static/
-  //       ]
-  //     },
-  //     {
-  //       test: /\.json$/,
-  //       use: 'json'
-  //     },
-  //     {
-  //       test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-  //       loader: 'url',
-  //       query: {
-  //         limit: 10000,
-  //         name: utils.assetsPath('img/[name].[hash:7].[ext]')
-  //       }
-  //     },
-  //     {
-  //       test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-  //       loader: 'url',
-  //       query: {
-  //         limit: 10000,
-  //         name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
-  //       }
-  //     }
-  //   ]
-  // },
-  // eslint: {
-  //   formatter: require('eslint-friendly-formatter')
-  // }
 }
