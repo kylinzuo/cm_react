@@ -8,26 +8,17 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import { Router, Route } from 'react-router-dom'
-import createBrowserHistory from 'history/createBrowserHistory'
-import App from '../src/page/index'
+import StaticRouter from 'react-router-dom/StaticRouter'
+import { renderRoutes } from 'react-router-config'
+import routes from '../src/routes'
+
 import todoApp from '../src/redux/reducers'
 
 process.env.NODE_ENV = 'production'
+console.log('routes', routes)
 
-const newHistory = createBrowserHistory()
 const store = createStore(todoApp)
 
-const com = renderToString(
-  <Provider store={store}>
-    <Router history={newHistory}>
-      <Route path='/' component={App} />
-    </Router>
-  </Provider>
-);
-
-
-console.log('com', com)
 function renderFullPage(html, initialState) {
   return `
     <!DOCTYPE html>
@@ -104,7 +95,14 @@ let initialState = 'hello world'
 
 // 拦截根路由下 html 文件请求，取消缓存
 app.use('/', (req, res) => {
-    res.end(renderFullPage(html, initialState))
+    // res.end(renderFullPage(html, initialState))
+    let context = {};
+    const content = renderToString(
+      <StaticRouter location={req.url} context={context}>
+        {renderRoutes(routes)}
+      </StaticRouter>
+    )
+    res.render('index', {title: 'Express', data: false, content });
 })
 
 // 启动服务
