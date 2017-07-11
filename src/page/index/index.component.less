@@ -1,12 +1,23 @@
+@import '../../less/global.less';
 @navHeight: 2.45rem;
 @color-nav-bg: rgba(255, 255, 255, 0.9);
+
+.container {
+  .display-flex;
+  .flex-direction;
+  &>div {
+    .flex-grow;
+    // width: 100%;
+    // height: 100%;
+  }
+}
 
 .navList {
   background-color: @color-nav-bg;
   border-top: 1px solid #D8D8D8;
   height: @navHeight;
   ul {
-    display: flex;
+    .display-flex;
     height: inherit;
     list-style: none;
     li {
