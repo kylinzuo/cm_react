@@ -3,17 +3,19 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { renderRoutes } from 'react-router-config'
 
-class App extends PureComponent {
+class HomeComponent extends PureComponent {
   render () {
+    const { kylin } = this.props
     return (
-      <div style={{ height: '100%' }}>
-        {renderRoutes(this.props.route.routes)}
+      <div>
+        { renderRoutes(this.props.route.routes) }
+        { kylin }
       </div>
     )
   }
 }
 
-App.propTypes = {
+HomeComponent.propTypes = {
 }
 
 function select (state) {
@@ -22,4 +24,4 @@ function select (state) {
   }
 }
 
-export default connect(select)(App)
+export default connect(select)(HomeComponent)

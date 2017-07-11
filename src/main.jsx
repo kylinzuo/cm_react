@@ -12,6 +12,9 @@ import thunk from 'redux-thunk'
 import routes from './routes'
 import todoApp from './redux/reducers'
 
+require('./less/reset.less')
+require('./less/global.less')
+
 const store = createStore(
   todoApp, window.__INITIAL_STATE__, applyMiddleware(thunk)
 )

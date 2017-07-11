@@ -49,16 +49,19 @@ module.exports = {
             loader: "style-loader" // creates style nodes from JS strings
         }, {
             loader: "css-loader", // translates CSS into CommonJS
-            options: {
-              importLoaders: 1,
+            query: { 
+              modules: true,
+              localIdentName: '[name]___[hash:base64:5]'
             }
-        }, {
-          loader: 'px2rem-loader',
-          options: {
-            remUnit:75,
-            remPrecision:8
-          }
-        }, {
+        },
+        // {
+        //   loader: 'px2rem-loader',
+        //   options: {
+        //     remUnit:75,
+        //     remPrecision:8
+        //   }
+        // },
+        {
           loader: 'postcss-loader'
         }]
       },
@@ -67,14 +70,20 @@ module.exports = {
         use: [{
           loader: "style-loader" // creates style nodes from JS strings
         }, {
-          loader: "css-loader" // translates CSS into CommonJS
-        }, {
-          loader: 'px2rem-loader',
-          options: {
-            remUnit:75,
-            remPrecision:8
+          loader: "css-loader", // translates CSS into CommonJS
+          query: { 
+            modules: true,
+            localIdentName: '[name]___[hash:base64:5]'
           }
-        }, {
+        },
+        // {
+        //   loader: 'px2rem-loader',
+        //   options: {
+        //     remUnit:75,
+        //     remPrecision:8
+        //   }
+        // },
+        {
           loader: 'postcss-loader'
         }, {
           loader: "less-loader" // compiles Less to CSS

@@ -1,43 +1,20 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { renderRoutes } from 'react-router-config'
-
-class AppRoot extends Component {
-  constructor (props) {
-    super(props)
-  }
-  render () {
-    console.log(this.props.route)
-    return <div>
-      AppRoot
-      {renderRoutes(this.props.route.routes)}
-    </div>
-  }
-}
-AppRoot.PropTypes = {
-  route: PropTypes.any.isRequired
-}
-
-const Home = () => (
-  <div> Home Page</div>
-)
-const List = () => (
-  <div> List Page </div>
-)
+import App from 'src/page/index'
+import IndexComponent from 'src/page/index/index.component'
+import HomeComponent from 'src/page/home/home.component'
 
 const routes = [
   {
-    component: AppRoot,
+    component: App,
     routes: [
       { path: '/',
         exact: true,
-        component: Home
-      },
-      { path: '/home',
-        component: Home
-      },
-      { path: '/list',
-        component: List
+        component: IndexComponent,
+        routes: [
+          {
+            path: 'home',
+            component: HomeComponent
+          }
+        ]
       }
     ]
   }

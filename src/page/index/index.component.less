@@ -1,0 +1,22 @@
+@navHeight: 2.45rem;
+@color-nav-bg: rgba(255, 255, 255, 0.9);
+
+.navList {
+  background-color: @color-nav-bg;
+  border-top: 1px solid #D8D8D8;
+  height: @navHeight;
+  ul {
+    display: flex;
+    height: inherit;
+    list-style: none;
+    li {
+      flex-grow: 1;
+      height: inherit;
+      text-align: center;
+      a {
+        display: block;
+        line-height: @navHeight;
+      }
+    }
+  }
+}
