@@ -2,23 +2,23 @@ import React, { PureComponent } from 'react'
 // import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { renderRoutes } from 'react-router-config'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import indexStyle from './index.component.less'
 
 const navList = [
   {
-    icon: '',
+    icon: 'iconfont icon-shouye',
     path: '/',
     text: '首页'
   },
   {
-    icon: '',
-    path: '/',
+    icon: 'iconfont icon-zhuanti',
+    path: '/special',
     text: '专题'
   },
   {
-    icon: '',
-    path: '/',
+    icon: 'iconfont icon-wode',
+    path: '/me',
     text: '我的'
   }
 ]
@@ -34,7 +34,10 @@ class IndexComponent extends PureComponent {
           <ul>
             {
               navList.map((d, i) => {
-                return <li key={'key-' + i}><Link to={d.path} >{d.text}</Link></li>
+                return <li key={'key-' + i}><NavLink exact to={d.path} activeClassName={indexStyle.active}>
+                  <i className={d.icon} />
+                  {d.text}
+                </NavLink></li>
               })
             }
           </ul>
