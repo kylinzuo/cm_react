@@ -2,6 +2,9 @@ import React, { PureComponent } from 'react'
 // import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { renderRoutes } from 'react-router-config'
+import FastClick from 'fastclick'
+
+FastClick.attach(document.body)
 
 class App extends PureComponent {
   render () {

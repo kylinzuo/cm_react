@@ -1,0 +1,31 @@
+@headerHeight: 2.2rem;
+.header {
+  position: relative;
+  background-color: #fff;
+  color: #333333;
+  text-align: center;
+  width: 100%;
+  height: @headerHeight;
+  line-height: @headerHeight;
+  .left {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: inherit;
+    width: @headerHeight;
+  }
+  .title {
+    font-size: 1rem;
+    letter-spacing: 0;
+  }
+  .right {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0.75rem;
+    line-height: inherit;
+    font-size: 0.8rem;
+    letter-spacing: 0;
+  }
+}

@@ -1,15 +1,19 @@
 import React, { PureComponent } from 'react'
 // import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { renderRoutes } from 'react-router-config'
+// import { renderRoutes } from 'react-router-config'
+
+import homeStyle from './home.component.less'
+import HeaderComponent from '../components/header/header.component'
+import TopicHeaderComponent from '../components/topic-header/topic-header.component'
 
 class HomeComponent extends PureComponent {
   render () {
-    const { kylin } = this.props
     return (
       <div>
-        { renderRoutes(this.props.route.routes) }
-        { kylin }
+        <HeaderComponent />
+        <div className={homeStyle.carousel} />
+        <TopicHeaderComponent />
       </div>
     )
   }

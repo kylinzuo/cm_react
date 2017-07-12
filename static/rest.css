@@ -1,0 +1,80 @@
+html,body{color:#000;background:#fff;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;} /*重设页面样式*/
+
+/*内外边距通常让各个浏览器样式的表现位置不同*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+  margin:0;padding:0;
+}
+html,body{height: 100%;font-size: 20px;}  /*撑高页面把footer放在底部*/
+
+body,button,input,select,textarea{font:12px/1.5 tahoma,arial,"Microsoft Yahei","宋体",sans-serif,\5b8b\4f53;}    /*解决表单元素并不继承父级 font 的问题*/
+table{border-collapse:collapse;border-spacing:0;}  /*去掉各Table cell 的边距并让其边重合*/
+th{text-align:inherit;}  /*IE bug fixed: th 不继承 text-align*/
+
+fieldset,img{border:0;} /*去除默认边框*/
+caption,th {text-align:left;}   /*对齐*/
+
+/*参考其他base样式包*/
+input,select{vertical-align:middle;}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+textarea{outline:none;resize:none;}
+ol,ul{list-style: outside none none;}
+del{text-decoration:line-through;}
+em{font-style:normal;}
+i{font-style:normal;}
+sup,sub{font-size:100%;vertical-align:baseline;}
+input[type=submit],input[type=button],[class^=btn-],button{cursor:pointer;}
+input[type="submit"]:hover, input[type="button"]:hover, [class^=btn-]:hover { filter:alpha(opacity=70);opacity:.7;}
+input::-moz-focus-inner{border:0;padding:0}
+
+a{cursor: pointer;text-decoration: none;} /*默认a标签样式  保持样式一样*/
+
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:500;}  /*来自yahoo, 让标题都自定义, 适应多个系统应用*/
+.clearfix {*zoom: 1;}
+.clearfix:before,
+.clearfix:after {display: table;content: "";line-height: 0;}
+.clearfix:after {clear: both;}
+/** 文字颜色样式 **/
+.txt-gray {
+  color: #AEAEAE;
+}
+.txt-gray-deep {
+  color: #666666;
+}
+.txt-red {
+  color: #DB4637;
+}
+.txt-green {
+  color: #019901;
+}
+.txt-orange {
+  color: #FD871F;
+}
+.txt-blue {
+  color: #397FF5;
+}
+.txt-yellow {
+  color: #FFC10F;
+}
+#root{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* antd mobile rest */
+.am-tab-bar-bar {
+  position: relative !important;
+}
+.tab-container .am-list-body {
+  background: transparent;
+  border: 0;
+}
+.tab-container .am-tabs-ink-bar {
+  background-color: #DB4637;
+}
+.tab-container .am-tabs-bar .am-tabs-tab {
+  color: #535353;
+}
+.tab-container .am-tabs-bar .am-tabs-tab-active {
+  color: #DB4637;
+}

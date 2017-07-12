@@ -11,7 +11,7 @@ const routes = [
         component: IndexComponent,
         routes: [
           {
-            path: 'home',
+            path: '',
             component: HomeComponent
           }
         ]
