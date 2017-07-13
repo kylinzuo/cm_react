@@ -5,7 +5,7 @@ import React, { PureComponent } from 'react'
 class NotFoundComponent extends PureComponent {
   render () {
     return (
-      <div>Not Found</div>
+      <div>404: Not Found</div>
     )
   }
 }

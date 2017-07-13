@@ -25,6 +25,7 @@ const navList = [
 
 class IndexComponent extends PureComponent {
   render () {
+    console.log('%c this.props.route.routes', 'color: #f00', this.props.route.routes)
     return (
       <div className={indexStyle.container} style={{ height: '100%' }}>
         <div>

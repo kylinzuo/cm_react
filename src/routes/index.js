@@ -27,8 +27,28 @@ const routes = [
           }
         ]
       },
+      // { path: '/special',
+      //   exact: true,
+      //   component: IndexComponent,
+      //   routes: [
+      //     {
+      //       path: '',
+      //       component: SpecialComponent
+      //     }
+      //   ]
+      // },
+      // { path: '/me',
+      //   exact: true,
+      //   component: IndexComponent,
+      //   routes: [
+      //     {
+      //       path: '',
+      //       component: MeComponent
+      //     }
+      //   ]
+      // },
       {
-        path: '*',
+        path: '**',
         component: NotFoundComponent
       }
     ]
